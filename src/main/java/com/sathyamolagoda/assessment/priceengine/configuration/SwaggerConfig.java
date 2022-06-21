@@ -8,6 +8,10 @@ import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
+/**
+ * @author Sathya Molagoda on 4/6/2022
+ */
+
 @Configuration
 public class SwaggerConfig {
     @Bean

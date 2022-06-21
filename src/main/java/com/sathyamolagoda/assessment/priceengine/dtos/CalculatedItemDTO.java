@@ -11,28 +11,29 @@ import javax.validation.constraints.NotNull;
  */
 
 @Data
-public class ItemDTO {
+public class CalculatedItemDTO {
 
     private Long id;
 
-    @NotNull
-    @NotEmpty
     private String itemName;
 
-    @NotNull
-    @Min(value = 1)
     private Integer itemsPerCarton;
 
-    @NotNull
     private Double cartonPrice;
 
     private Boolean rareProduct;
 
-    public ItemDTO(Long id, String itemName, Integer itemsPerCarton, Double cartonPrice, Boolean rareProduct) {
+    private Double actualPrice;
+
+    private String units;
+
+    public CalculatedItemDTO(Long id, String itemName, Integer itemsPerCarton, Double cartonPrice, Boolean rareProduct, Double actualPrice, String units) {
         this.id = id;
         this.itemName = itemName;
         this.itemsPerCarton = itemsPerCarton;
         this.cartonPrice = cartonPrice;
         this.rareProduct = rareProduct;
+        this.actualPrice = actualPrice;
+        this.units = units;
     }
 }

@@ -1,17 +1,20 @@
 package com.sathyamolagoda.assessment.priceengine.models;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.*;
 
-@Getter
-@Setter
+/**
+ * @author Sathya Molagoda on 4/6/2022
+ */
+
+@Data
 @Entity(name = "items")
 public class Item extends CommonModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ITEM_G1")
+    @SequenceGenerator(name = "ITEM_G1", sequenceName = "item_seq")
     @Column(name = "item_id")
     private Long id;
 
@@ -26,4 +29,8 @@ public class Item extends CommonModel {
     @Basic
     @Column(name = "carton_price")
     private Double cartonPrice;
+
+    @Basic
+    @Column(name = "rare_product")
+    private Boolean rareProduct;
 }
